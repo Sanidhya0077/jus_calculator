@@ -2,6 +2,7 @@ import { useState } from "react";
 import CalculatorForm from "./components/CalculatorForm";
 import SummaryCard from "./components/SummaryCard";
 import HolidayTable from "./components/HolidayTable";
+import Loader from "./components/Loader";
 import "./App.css";
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
 
       <main className="app-main">
         <CalculatorForm onCalculate={handleCalculate} loading={loading} />
+        {loading && <Loader />}
         {error && <div className="error-banner">{error}</div>}
         {result && (
           <>

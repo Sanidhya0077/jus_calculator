@@ -13,7 +13,7 @@ export default function App() {
     setLoading(true);
     setError(null);
     try {
-      const API = import.meta.env.VITE_API_URL || "https://juscalculator-production-bd59.up.railway.app";
+      const API = import.meta.env.VITE_API_URL || "https://jus-calculator-backend.onrender.com";
       const res = await fetch(`${API}/api/calculate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

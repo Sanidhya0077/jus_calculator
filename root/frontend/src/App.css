@@ -271,6 +271,142 @@ td {
 
 .td-comp.zero { color: #bbb; }
 
+/* ── Hours input with +/- buttons ───────────── */
+.hours-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1.5px solid #dde2ea;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hours-input-wrap input {
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  flex: 1;
+  min-width: 0;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #0e6b6b;
+}
+
+.hours-input-wrap input:focus {
+  border-color: transparent;
+  outline: none;
+}
+
+.hours-btn {
+  background: #f4f7fb;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0e6b6b;
+  cursor: pointer;
+  transition: background 0.15s;
+  line-height: 1;
+}
+
+.hours-btn:hover { background: #e0eeee; }
+
+.optional {
+  font-weight: 400;
+  color: #aaa;
+  font-size: 0.78rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Working day toggles ─────────────────────── */
+.day-toggles {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.day-btn {
+  padding: 8px 16px;
+  border: 1.5px solid #dde2ea;
+  border-radius: 8px;
+  background: white;
+  color: #666;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.day-btn:hover { border-color: #0e6b6b; color: #0e6b6b; }
+
+.day-btn.active {
+  background: #0e6b6b;
+  border-color: #0e6b6b;
+  color: white;
+}
+
+/* ── Working-day breakdown ───────────────────── */
+.breakdown-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.breakdown-item {
+  flex: 1;
+  min-width: 130px;
+  background: #f4f7fb;
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.breakdown-item.working { border-top: 3px solid #0e6b6b; }
+.breakdown-item.bonus   { border-top: 3px solid #f59e0b; }
+.breakdown-item.total   { border-top: 3px solid #1a3a5c; }
+
+.bd-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  line-height: 1;
+}
+
+.breakdown-item.working .bd-value { color: #0e6b6b; }
+.breakdown-item.bonus   .bd-value { color: #f59e0b; }
+.breakdown-item.total   .bd-value { color: #1a3a5c; }
+
+.bd-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.bd-sub {
+  font-size: 0.72rem;
+  color: #999;
+}
+
+.breakdown-divider {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #bbb;
+  flex-shrink: 0;
+}
+
+/* ── Your Day? column ────────────────────────── */
+.your-day-yes   { color: #0e6b6b; font-weight: 700; font-size: 0.82rem; }
+.your-day-bonus { color: #f59e0b; font-weight: 700; font-size: 0.82rem; }
+.your-day-na    { color: #ccc; font-size: 0.82rem; }
+
 /* ── Loader ─────────────────────────────────── */
 .loader-overlay {
   position: fixed;

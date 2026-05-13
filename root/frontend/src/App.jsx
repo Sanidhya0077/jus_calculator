@@ -13,12 +13,13 @@ export default function App() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("http://localhost:8000/api/calculate", {
+      const API = import.meta.env.VITE_API_URL || "https://juscalculator-production-bd59.up.railway.app";
+      const res = await fetch(`${API}/api/calculate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      if (!res.ok) throw new Error("Server error — is the backend running on port 8000?");
+      if (!res.ok) throw new Error("Backend error — please try again.");
       setResult(await res.json());
     } catch (e) {
       setError(e.message);
